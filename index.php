@@ -8,7 +8,6 @@
     <link rel='stylesheet' type='text/css' href='forum_php/style.php' />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <title> Cummins Discussion forum</title>
 </head>
 
@@ -88,7 +87,5 @@
 
 
 </body>
-
-<script src="script.js" type="text/javascript"></script>
 
 </html>
