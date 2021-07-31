@@ -9,30 +9,49 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action ="\forum_php\partials\_handleLogin.php" method = "post">
-            <div class="modal-body">
+            <form action ="\forum_php\partials\_handleLogin.php" method = "post" id="frmLogin" onsubmit="return validate();">
+            <div class="modal-body text-center">
                 <!-- login form from bootstrap -->
-                
                     <div class="form-group">
-                        <label for="loginEmail">Email address</label>
+                        <label for="loginEmail">Email address</label><span id="user_info" class="error-info" style="color: #FF0000;"></span>
                         <input type="email" class="form-control" id="loginEmail" name= "loginEmail" aria-describedby="emailHelp"
                             placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
                     <div class="form-group">
-                        <label for="loginEmail">Password</label>
+                        <label for="loginEmail">Password</label><span id="password_info" class="error-info" style="color: #FF0000;"></span>
                         <input type="password" class="form-control" id="loginPass" name="loginPass"  placeholder="Password">
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
-              
+                    <button type="submit" name="login" class="btn btn-primary">Login</button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               
             </div>
             </form>
         </div>
     </div>
 </div>
+
+
+<script>
+        function validate() {
+        var $valid = true;
+        document.getElementById("user_info").innerHTML = "";
+        document.getElementById("password_info").innerHTML = "";
+        
+        var userName = document.getElementById("loginEmail").value;
+        var password = document.getElementById("loginPass").value;
+        if(userName == "") 
+        {
+            document.getElementById("user_info").innerHTML = "*required";
+        	$valid = false;
+        }
+        if(password == "") 
+        {
+        	document.getElementById("password_info").innerHTML = "*required";
+            $valid = false;
+        }
+        return $valid;
+    }
+    </script>
